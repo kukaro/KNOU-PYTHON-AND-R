@@ -1,0 +1,1 @@
+xm <- matrix(1:12, ncol = 6, byrow = T)
