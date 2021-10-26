@@ -1,3 +1,5 @@
+import pandas as pd
+from pandas import Series
 d = {'Name': pd.Series(['Tom',
                         'James',
                         'Ricky',
