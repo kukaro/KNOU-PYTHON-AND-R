@@ -8,4 +8,3 @@ name = 'David'
 aaa = example(name)
 print(aaa.a)
 print(aaa.b)
-
