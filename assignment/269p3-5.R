@@ -12,7 +12,7 @@ classify <- function(pregnant) {
 
 
 for (col in c('glucose', 'pressure', 'triceps', 'insulin', 'mass', 'pedigree')) {
-    print(paste0('**********:', col))
+    print(paste0('**********:diabetes:',col))
     print('##########:MEAN')
     print(aggregate(pima[col], list(diabetes = pima$diabetes), mean, na.rm = T))
     print('##########:SD')
@@ -21,7 +21,7 @@ for (col in c('glucose', 'pressure', 'triceps', 'insulin', 'mass', 'pedigree')) 
 pima$pregnant <- unlist(lapply(pima$pregnant, classify))
 
 for (col in c('glucose', 'pressure', 'triceps', 'insulin', 'mass', 'pedigree')) {
-    print(paste0('**********:', col))
+    print(paste0('**********:pregnant:', col))
     print('##########:MEAN')
     print(aggregate(pima[col], list(diabetes = pima$pregnant), mean, na.rm = T))
     print('##########:SD')

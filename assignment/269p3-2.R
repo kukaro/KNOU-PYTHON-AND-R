@@ -1,7 +1,9 @@
 pima <- read.csv('./data/pima2.csv', header = T)
 par(mfrow = c(2, 1))
-for (col in c('glucose', 'pressure', 'triceps', 'insulin', 'mass', 'pedigree', 'age')) {
-    boxplot(get(col) ~ diabetes, data = pima, main = paste0(col, ' boxplot'), col = 1:2)
+cols <- c('glucose', 'pressure', 'triceps', 'insulin', 'mass', 'pedigree', 'age')
+by(pima[cols], pima$diabetes, summary)
+for (col in cols) {
+    boxplot(get(col) ~ diabetes, data = pima, main = paste0(col, ' boxplot'), col = 2:3)
     hist_pos <- hist(pima[[col]][pima$diabetes == 'pos'], plot = F)
     hist_neg <- hist(pima[[col]][pima$diabetes == 'neg'], plot = F)
     plot(hist_pos,
